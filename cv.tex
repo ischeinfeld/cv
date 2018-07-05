@@ -1,0 +1,142 @@
+\documentclass[letterpaper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 		%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage[big]{layaureo} 				%better formatting of the A4 page
+%\usepackage[margin=0.5in]{geometry}
+ \usepackage{fullpage}
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+\usepackage{makecell} % https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+\addtolength{\voffset}{-0.9cm}
+\addtolength{\textheight}{1.75in}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\vspace*{1mm}
+\par{\centering
+		{\Huge Isaac Scheinfeld % previously \textsc{Scheinfeld}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\vspace*{1mm}
+\section{Personal Data}
+
+\begin{tabular}{rl}
+%    \textsc{Place and Date of Birth:} & Someplace, Italy  | dd Month 1912 \\
+    \textsc{Address:}   & 240 East 33rd Street, New York, NY 10016\\
+    \textsc{Contact:}     & (917) 699-4020, \href{mailto:ischeinfeld@outlook.com}{ischeinfeld@outlook.com}
+\end{tabular}
+
+%Section: Education
+\vspace*{1mm}
+\section{Education}
+\begin{tabular}{rl}
+ \textsc{June} 2020 & Bachelor of Science, \textbf{Stanford University}, California\\
+& \small\textsc{Majors:} Symbolic Systems (AI Track) and Math, \small\textsc{Current Gpa:} 3.9\\
+\end{tabular}
+
+%Section: Work Experience
+\vspace*{1mm}
+\section{Experience}
+\begin{tabular}[t]{r|p{13.3cm}}
+\textsc{Present}  & SSP Summer Intern at \textsc{Stanford Language and Cognition Lab}, Stanford \\ \textsc{Spring 2018} &\emph{Computational Linguistics and Psychology Research}\\&\footnotesize{Beginning research on concept acquisition, focusing on a network-theoretic analysis of cross-linguistic child language acquisition as measured in the Wordbank dataset.}\\\multicolumn{2}{c}{}\\
+\textsc{Present}  & Cofounder and CTO of \textsc{ReMatter Inc.} \\ \textsc{October 2017} &\emph{Industrial Recycling Marketplace}\\&\footnotesize{Working to encourage and facilitate the recycling of currently-wasted industrial byproducts. A \emph{StartX} company, ReMatter Inc. is an early stage startup seeking to build a cyclical materials marketplace by optimizing the flow of waste products through the current materials recycling and refinement infrastructure.}\\\multicolumn{2}{c}{}\\
+\textsc{End 2017}  & Intern at \textsc{Columbia Data Science Institute}, New York City \\ \textsc{Summer 2017} &\emph{Natural Language Processing Research}\\&\footnotesize{Researched irony detection under Dr. Muresan using both linguistic features and convolutional neural networks. Primarily worked on incorporating human sentiments associated with situations learned from large data sets into sarcasm detection algorithms trained on smaller quantities of data.}\\\multicolumn{2}{c}{}\\
+\textsc{Present}  & Captain and Engineering Lead of \textsc{Stanford AIR} \\ \textsc{Spring 2017} &\emph{Computer Vision and Autonomous Fixed Wing Control}\\&\footnotesize{Cofounded Stanford Aerial Intelligence \& Reconnaissance, a team preparing for the 2018 Student Unmanned Aerial Systems Competition. Currently developing autonomous command and control systems for a 5ft fixed wing aircraft and computer vision software for mapping and search-and-rescue competition tasks.}\\\multicolumn{2}{c}{}\\
+ \textsc{Summer 2016} & Intern at \textsc{Cognitec}, Dresden \\&\emph{C++ Development}\\&\footnotesize{Tested and benchmarked the in-house templated C++ BLAS library and wrappers on Intel MKL and cuBLAS. Automated these and other tests to run across CPU and GPU based compute servers of various architectures.}\\\multicolumn{2}{c}{}\\
+ 
+ 
+ \textsc{Summer 2015} & Intern at \textsc{Duval \& Stachenfeld LLP}, New York \\&\emph{Market Research}\\&\footnotesize{Researched, published, and partially automated the firm's internal real-estate newsletter.}\\\multicolumn{2}{c}{}\\
+\end{tabular}
+
+
+\section{Skills}
+\begin{tabular}{rl}
+ Programming:& Python with Scipy and Tensorflow, C++, Clojure, Java, and some Haskell\\
+Software:& Various Linux Distros, Microsoft Suite, Adobe Suite, Git, and {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+Languages:& Fluent German, Intermediate Spanish\\
+\end{tabular}
+
+\pagebreak
+\vspace*{1mm}
+
+
+%Section: Relevant Coursework
+\section{Selected Coursework}
+\begin{tabular}{r|p{13.3cm}}
+ \textsc{CS 229} & Machine Learning \\&\footnotesize{Covers statistical pattern recognition, linear and non-linear regression, non-parametric methods, exponential family, GLMs, support vector machines, kernel methods, model/feature selection, learning theory, VC dimension, clustering, density estimation, dimensionality reduction, ICA, PCA, reinforcement learning and adaptive control, Markov decision processes, approximate dynamic programming, and policy search.}\\\multicolumn{2}{c}{} \\
+ \textsc{CS 161} & Design and Analysis of Algorithms \\&\footnotesize{Covers worst and average case analysis, recurrences and asymptotics, algorithms for sorting, searching, and selection. Data structures include  search trees, heaps, hash tables. Techniques include dynamic programming, greedy algorithms, and amortized analysis. Also covers algorithms for fundamental graph problems including minimum-cost spanning trees, connected components, topological sort, and shortest paths.}\\\multicolumn{2}{c}{} \\
+  \textsc{CS 257} & Logic and Artificial Intelligence \\&\footnotesize{This is a course at the intersection of logic and artificial intelligence. Covers recent work in AI that has leveraged ideas from logic. Specific areas will include: reasoning about belief and action, causality and counterfactuals, legal and normative reasoning, natural language inference, and Turing-complete logical formalisms including (probabilistic) logic programming and lambda calculus.}\\\multicolumn{2}{c}{} \\
+    \textsc{CS 20} & Tensorflow for Deep Learning Research \\&\footnotesize{Covers the fundamentals and contemporary usage of the Tensorflow library for deep learning research. Students will use Tensorflow to build models of different complexity, from simple linear/logistic regression to convolutional neural network and recurrent neural networks with LSTM to solve tasks such as word embeddings, translation, and optical character recognition. Students will also learn best practices to structure a model and manage research experiments.}\\\multicolumn{2}{c}{} \\
+  \textsc{Math 6xCM} &Modern Mathematics: Continuous Methods \\&\footnotesize{A theoretical year-long sequence in multivariable calculus and linear algebra. 61CM covers real analysis and linear algebra. 62CM covers calculus on manifolds and the general stokes theorem, including differential forms and applications to topology. 63CM covers ordinary differential equations focusing on stability and asymptotic properties of solutions to linear systems, and existence and uniqueness theorems for nonlinear differential equations.}\\\multicolumn{2}{c}{} \\
+    \textsc{MATH 230A} & Theory of Probability I \\&\footnotesize{The first class in a theoretical year-long sequence in probability theory. Covers sigma algebras, measure theory, Borel-Cantelli lemmas, almost sure and Lp convergence, weak and strong laws of large numbers, weak convergence, central limit theorems, Poisson convergence, and Stein's method.}\\\multicolumn{2}{c}{} \\ 
+  \textsc{MATH 147} & Differential Topology \\&\footnotesize{Smooth manifolds, transversality, Sards' theorem, embeddings, degree of a map, Borsuk-Ulam theorem, Hopf degree theorem, Jordan curve theorem.}\\\multicolumn{2}{c}{} \\ 
+  \textsc{PHIL 15x} & Logic Sequence \\&\footnotesize{150 covers propositional, modal, and predicate logic. 151 covers metalogic, focusing on the syntax and semantics of sentential and first-order logic. Covers model theory, G\"odel's completeness theorem and its consequences, the L\"owenheim-Skolem theorem and the compactness theorem.}\\\multicolumn{2}{c}{} \\
+    \textsc{EE 102A} & Signal Processing I \\&\footnotesize{Concepts and tools for continuous- and discrete-time signal and system analysis. Covers Fourier series and Fourier transforms, filtering and signal distortion, time/frequency sampling and interpolation, and continuous-discrete-time signal conversion and quantization.}\\\multicolumn{2}{c}{} \\
+   \textsc{PSYCH 45} & Learning and Memory \\&\footnotesize{The literature on learning and memory including cognitive and neural organization of memory, mechanisms of remembering and forgetting, and why people sometimes falsely remember events that never happened. Cognitive theory and behavioral evidence integrated with data from patient studies and functional brain imaging.}\\\multicolumn{2}{c}{} \\
+
+
+%\textsc{APPPHYS 293} & Theoretical Neuroscience \\&\footnotesize{Survey of advances in the theory of neural networks, mainly focused on results of relevance to theoretical neuroscience. Discussion of results in the neurally-plausible approximation of back propagation, theory of spiking neural networks, the relationship between network and task dimensionality, and network state coarse-graining. Exploration of estimation theory for various typical methods of mapping neural network models to neuroscience data, surveying and analyzing recent approaches from both sensory and motor areas in a variety of species.}\\\multicolumn{2}{c}{} \\
+%   \textsc{PSYCH 70} & Introduction to Social Psychology \\&\footnotesize{Why do people behave the way they do? This is the fundamental question that drives social psychology. The social forces studied in the class shape our behavior, though their operation cannot be seen directly. A central idea of this class is that awareness of these forces allows us to make choices in light of them, offering us more agency and wisdom in our everyday lives.}\\\multicolumn{2}{c}{} \\
+\end{tabular}
+
+
+\end{document}
+
